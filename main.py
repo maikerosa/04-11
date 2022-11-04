@@ -8,5 +8,6 @@ token = ''
 url = 'https://api.github.com/user/following/' + username
 response = requests.put(url, auth=HTTPBasicAuth(username, token))
 
-print(response.status_code)
+if response.status_code == 204:
+    print('Usuario seguido com sucesso!')
 
